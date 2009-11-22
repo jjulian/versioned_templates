@@ -18,6 +18,11 @@ another template programatically. An example will explain it best.
     end
 
 Requests for `new` will render `new.html.erb` (or similar), while requests for `index` will ignore
-`index.html.erb` and instead look for `index_extra_wide.html.erb`.
+`index.html.erb` and instead look for `index_extra_wide.html.erb`. It also works when an action
+calls `render` passing a template name.
+
+You can also send multiple mappings on one line.
+
+    versioned_templates {:index => :index_extra_wide, :edit => :special_edit}
 
 Copyright (c) 2009 Jonathan Julian, released under the MIT license
